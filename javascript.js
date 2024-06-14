@@ -38,3 +38,20 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }
 }
+
+function playGame() {
+    for(let i = 0; i < 5; i++) {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    }
+    if (humanScore === computerScore) {
+        alert("Match completed, It's a tie!")
+    }
+    else if (humanScore > computerScore) {
+        alert("You got " + humanScore + " points, while the computer got " + computerScore + ", You win!")
+    }
+    if (humanScore < computerScore) {
+        alert("You got " + humanScore + " points, while the computer got " + computerScore + ", better luck next time")
+    }
+}
