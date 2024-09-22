@@ -57,3 +57,25 @@ function playGame() {
         alert("You got " + humanScore + " points, while the computer got " + computerScore + ", better luck next time")
     }
 }
+
+const rockButton = document.querySelector("#rock")
+const paperButton = document.querySelector("#paper")
+const scissorsButton = document.querySelector("#scissors")
+
+rockButton.addEventListener("click", ()=> {
+    let humanChoice = "rock";
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
+})
+
+paperButton.addEventListener("click", ()=> {
+    let humanChoice = "paper";
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
+})
+
+scissorsButton.addEventListener("click", ()=> {
+    let humanChoice = "scissors";
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
+})
