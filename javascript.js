@@ -3,6 +3,10 @@ console.log("domo des")
 let humanScore = 0;
 let computerScore = 0;
 
+const humanScoreIndicator = document.querySelector("#humanScore")
+const computerScoreIndicator = document.querySelector("#computerScore")
+const lastRoundResult = document.querySelector("#lastResult")
+
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
     switch(computerChoice) {
@@ -23,19 +27,35 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log("It's a tie!")
+        lastRoundResult.textContent = "It's a tie!"
         return;
     }
     if(humanChoice === "rock" && computerChoice === "scissors" ||
         humanChoice === "paper" && computerChoice === "rock" ||
         humanChoice === "scissors" && computerChoice === "paper"
     ) {
-        console.log("You Win");
         humanScore++;
+        humanScoreIndicator.textContent = humanScore
+        lastRoundResult.textContent = "You win!"
     }
     else {
-        console.log("You lose")
         computerScore++;
+        computerScoreIndicator.textContent = computerScore
+        lastRoundResult.textContent = "You lose."
+    }
+    if (computerScore == 5) {
+        lastRoundResult.textContent = "Match Complete, you lose."
+        computerScore = 0
+        humanScore = 0
+        computerScoreIndicator.textContent = 0
+        humanScoreIndicator.textContent = 0
+    }
+    if (humanScore == 5) {
+        lastRoundResult.textContent = "Match Complete, you win!"
+        computerScore = 0
+        humanScore = 0
+        computerScoreIndicator.textContent = 0
+        humanScoreIndicator.textContent = 0
     }
 }
 
@@ -79,3 +99,4 @@ scissorsButton.addEventListener("click", ()=> {
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
 })
+

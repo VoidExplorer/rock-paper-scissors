@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <button id="rock">🪨Rock</button>
     <button id="paper">📄Paper</button>
     <button id="scissors">✂️Scissors</button>
+    <div class="container">
+    <div class="innerContainer">
+        <div class="scoreContainer"><h2>Your Score</h2>
+        <h3 id="humanScore">0</h3></div>
+        <div class="scoreContainer"><h2>Computer Score</h2>
+            <h3 id="computerScore">0</h3></div>
+    </div>
+    <h2 id="lastResult"></h2>
+</div>
 </body>
 </html>
